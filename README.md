@@ -1,2 +1,2 @@
-# react-joke-app
+# effecthook-bestexample
 Created with CodeSandbox
