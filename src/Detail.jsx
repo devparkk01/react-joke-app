@@ -10,8 +10,8 @@ const Detail = (props) => {
   }
   return (
     <div className="joke-detail">
-      {props.joke !== "none" && <p>Category : {props.joke.category} </p>}
-      {data}
+      {props.joke !== "none" && <p>Category : {props.categ} </p>}
+      <h3>{data}</h3>
     </div>
   );
 };

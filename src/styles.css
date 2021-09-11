@@ -26,6 +26,11 @@
 
 .btn__categ {
   margin: 0.25rem;
+  cursor: pointer;
+}
+
+.btn__categ:hover {
+  background-color: coral;
 }
 
 .btn {
@@ -36,8 +41,12 @@
   padding-left: 0.5rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-  background: green;
+  background: blue;
   border-radius: 0.75rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background: green;
 }
 
 .joke-detail {

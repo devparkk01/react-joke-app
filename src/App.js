@@ -4,6 +4,7 @@ import Axios from "axios";
 import { useState, useEffect } from "react";
 
 const App = () => {
+  const [categ, setCateg] = useState("Misc");
   const [joke, setJoke] = useState("none");
 
   useEffect(() => {
@@ -17,8 +18,6 @@ const App = () => {
       .catch((err) => setJoke("Nothing found "));
   }
 
-  let categSelected = "none";
-
   const allCateg = [
     "Misc",
     "Dark",
@@ -29,28 +28,33 @@ const App = () => {
   ];
 
   const changeCategHandler = (event) => {
-    categSelected = event.target.innerText;
-    // console.log(categSelected) ;
+    setCateg(event.target.innerText);
   };
 
   const jokeHandler = (event) => {
-    getJoke(categSelected);
+    getJoke(categ);
   };
 
   return (
     <div className="joke">
-      {allCateg.map((categ) => (
-        <button key={categ} className="btn__categ" onClick={changeCategHandler}>
-          {categ}
-        </button>
-      ))}
+      <div>
+        {allCateg.map((categ) => (
+          <button
+            key={categ}
+            className="btn__categ"
+            onClick={changeCategHandler}
+          >
+            {categ}
+          </button>
+        ))}
+      </div>
 
       <br />
       <button className="btn" onClick={jokeHandler}>
         Submit
       </button>
 
-      <Detail joke={joke}></Detail>
+      <Detail joke={joke} categ={categ}></Detail>
     </div>
   );
 };
